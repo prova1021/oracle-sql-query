@@ -1,0 +1,48 @@
+--Table Name: EMPLOYEE
+--Create Table Query:
+CREATE TABLE EMPLOYEE (
+EMP_ID NUMBER PRIMARY KEY,
+NAME VARCHAR2(50),
+AGE NUMBER,
+DEPARTMENT VARCHAR2(30),
+SALARY NUMBER
+);
+--Insert Sample Data:
+​ INSERT INTO EMPLOYEE VALUES (101, 'Rahat Shahriar', 25,
+'CSE', 50000);
+​ INSERT INTO EMPLOYEE VALUES (102, 'Mahabub Rahman', 28,
+'EEE', 55000);
+​ INSERT INTO EMPLOYEE VALUES (103, 'Ijaj Hakim', 30, 'CSE',
+60000);
+​ INSERT INTO EMPLOYEE VALUES (104, 'Munjarin Khan', 27,
+'CSE', 52000);
+​ INSERT INTO EMPLOYEE VALUES (105, 'Abu Siddik', 32, 'EEE',
+58000);
+
+--SQL Queries:
+--Select all employees:​
+SELECT * FROM EMPLOYEE;
+--​ Employees from CSE department:​
+SELECT NAME, AGE, SALARY
+FROM EMPLOYEE
+WHERE DEPARTMENT = 'CSE';
+--​ Employees with salary greater than 55000:​
+SELECT NAME, SALARY
+FROM EMPLOYEE
+WHERE SALARY > 55000;
+--​ Employees from CSE with salary > 50000 (AND operator):​
+SELECT NAME, SALARY
+FROM EMPLOYEE
+WHERE DEPARTMENT = 'CSE' AND SALARY > 50000;
+--​ Employees from CSE or EEE department (OR operator):​
+SELECT NAME, DEPARTMENT
+FROM EMPLOYEE
+WHERE DEPARTMENT = 'CSE' OR DEPARTMENT = 'EEE';
+--​ Employees not in CSE department (NOT operator):​
+SELECT NAME, DEPARTMENT
+FROM EMPLOYEE
+WHERE NOT DEPARTMENT = 'CSE';
+--​ Order employees by salary (descending):​
+SELECT NAME, SALARY
+FROM EMPLOYEE
+ORDER BY SALARY DESC;
